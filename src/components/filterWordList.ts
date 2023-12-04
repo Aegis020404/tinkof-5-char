@@ -17,10 +17,6 @@ export function filterWordList(generalWord: string[], wordList: IPValue[], noLis
         geo: el.geo?.split('').map(el => +el) ?? [],
         noGeo: el.noGeo?.split('').map(el => +el) ?? [],
     })) ?? [] as IPValueFormat[]
-    console.log(wordListFormat[4])
-
-    // console.clear()
-    // console.log(wordListFormat[0])
 
     return generalWord.map(el => el.toLowerCase()).filter(el => el.trim().length === 5)
         .filter(el => {
