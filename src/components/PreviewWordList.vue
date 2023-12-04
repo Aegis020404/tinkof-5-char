@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import generalWord from '../../../data.json'
 import {ref, watchEffect} from "vue";
-import {filterWordList} from "./filterWordList.ts";
+import {filterWordList} from "./filterWordList";
 
 interface IPValue {
   value?:string;
