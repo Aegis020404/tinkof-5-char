@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import generalWord from '../../../data.json'
+import generalWord from '../data.json'
 import {ref, watchEffect} from "vue";
 import {filterWordList} from "./filterWordList.ts";
 
