@@ -14,8 +14,8 @@ export function filterWordList(generalWord: string[], wordList: IPValue[], noLis
     const lessWordList = noListChar.split('');
     const wordListFormat = wordList.map(el => ({
         value: el.value,
-        geo: el.geo?.split('').map(el => +el) ?? [],
-        noGeo: el.noGeo?.split('').map(el => +el) ?? [],
+        geo: el.geo?.split('').map(el => +el - 1) ?? [],
+        noGeo: el.noGeo?.split('').map(el => +el - 1) ?? [],
     })) ?? [] as IPValueFormat[]
 
     return generalWord.map(el => el.toLowerCase()).filter(el => el.trim().length === 5)
@@ -24,10 +24,8 @@ export function filterWordList(generalWord: string[], wordList: IPValue[], noLis
             el = el.toLowerCase()
 
             for (const a of el.split('')) {
-
                 if (lessWordList.includes(a)) return false
             }
-
             for (const word of wordListFormat) {
                 if (word.value) {
                     if (!el.split('').includes(word.value)) return false
